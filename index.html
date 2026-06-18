@@ -3,46 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>You're On The Waitlist | Self-Publishing Studio</title>
-  <meta name="description" content="You're on the waitlist for the Self-Publishing Studio. We'll be in touch when enrollment opens." />
+  <title>You're On The Waitlist | LinkedIn AI LIVE</title>
+  <meta name="description" content="You're on the waitlist for LinkedIn AI LIVE. We'll be in touch when enrollment opens." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    /* ── SPS design tokens ── */
+    /* ── LinkedIn AI LIVE design tokens ── */
     :root {
-      --ink-950: #08111F;
-      --ink-900: #0C1929;
-      --ink-800: #142539;
-      --ink-700: #1E3550;
-      --ink-600: #2A4566;
-      --ink-500: #3E5C82;
-      --ink-300: #8AA0C0;
-      --ink-200: #B5C4D9;
-      --butter-700: #B8A648;
-      --butter-600: #D8C25A;
-      --butter-500: #EFE183;
-      --butter-400: #F4E89A;
-      --paper-100: #FBF7EC;
-      --paper-200: #F5EEDA;
-      --rust-500: #B8633A;
+      --navy:         #0A1B47;  /* dark blue  */
+      --navy-surface: #122456;  /* lifted card surface (derived from navy) */
+      --navy-shadow:  #050F2E;  /* deeper navy for soft shadow */
+      --blue:         #455885;  /* mid blue   */
+      --blue-light:   #4FA4E5;  /* light blue / accent */
+      --white:        #FFFFFF;  /* white      */
+      --muted:        #AEBCD9;  /* soft blue-grey body text */
 
       --font-display: "Anton", "Bebas Neue", Impact, system-ui, sans-serif;
       --font-sans:    "Inter", system-ui, -apple-system, sans-serif;
-      --font-serif:   "Newsreader", "Iowan Old Style", Georgia, serif;
 
-      --shadow-hard: 8px 8px 0 var(--ink-950);
+      --shadow-soft: 0 10px 30px rgba(5, 15, 46, 0.45);
     }
 
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; background: var(--ink-900); }
-    ::selection { background: var(--butter-500); color: var(--ink-900); }
+    html { scroll-behavior: smooth; background: var(--navy); }
+    ::selection { background: var(--blue-light); color: var(--navy); }
 
     body {
       font-family: var(--font-sans);
       font-weight: 400;
-      background-color: var(--ink-900);
-      color: var(--paper-100);
+      background-color: var(--navy);
+      color: var(--white);
       min-height: 100vh;
       padding: 36px 20px 72px;
       -webkit-font-smoothing: antialiased;
@@ -50,20 +41,6 @@
       line-height: 1.5;
       position: relative;
       overflow-x: hidden;
-    }
-
-    /* Brand book-spine texture — low-contrast blue book silhouettes
-       on the navy canvas. Fades out toward the bottom of the page. */
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background: url('./assets/book-pattern.svg') center top / 480px repeat;
-      opacity: 0.55;
-      mask-image: linear-gradient(180deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.55) 45%, rgba(0,0,0,0.0) 90%);
-      -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.55) 45%, rgba(0,0,0,0.0) 90%);
-      z-index: 0;
     }
 
     .container {
@@ -81,6 +58,37 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
+    /* ─── Brand wordmark ─── */
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .brand .badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 7px;
+      background: var(--blue-light);
+      color: var(--navy);
+      font-family: var(--font-display);
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    .brand .wordmark {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: 18px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+
     /* ─── Display headline ─── */
     h1.display {
       font-family: var(--font-display);
@@ -89,22 +97,22 @@
       line-height: 0.92;
       letter-spacing: -0.005em;
       text-transform: uppercase;
-      color: var(--paper-100);
+      color: var(--white);
       margin-bottom: 20px;
     }
 
     h1.display .accent {
-      color: var(--butter-500);
+      color: var(--blue-light);
     }
 
     /* ─── Sneak-peek card ─── */
     .card {
-      background: var(--ink-800);
-      border: 1px solid var(--ink-700);
-      border-radius: 3px;
+      background: var(--navy-surface);
+      border: 1px solid var(--blue);
+      border-radius: 8px;
       padding: 22px 24px 20px;
       margin-bottom: 24px;
-      box-shadow: var(--shadow-hard);
+      box-shadow: var(--shadow-soft);
     }
 
     .card-eyebrow {
@@ -113,7 +121,7 @@
       font-size: 11px;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--butter-500);
+      color: var(--blue-light);
       margin-bottom: 10px;
     }
 
@@ -124,19 +132,19 @@
       line-height: 0.95;
       letter-spacing: -0.005em;
       text-transform: uppercase;
-      color: var(--paper-100);
+      color: var(--white);
       margin-bottom: 12px;
     }
 
     .card p {
-      font-family: var(--font-serif);
+      font-family: var(--font-sans);
       font-size: 15px;
       line-height: 1.55;
-      color: var(--paper-200);
+      color: var(--muted);
     }
 
     .card p strong {
-      color: var(--butter-500);
+      color: var(--blue-light);
       font-weight: 600;
     }
 
@@ -147,12 +155,12 @@
 
     .survey-embed {
       width: 100%;
-      background: var(--ink-800);
-      border: 1px solid var(--ink-700);
-      border-radius: 3px;
+      background: var(--navy-surface);
+      border: 1px solid var(--blue);
+      border-radius: 8px;
       height: 480px;
       overflow: hidden;
-      box-shadow: var(--shadow-hard);
+      box-shadow: var(--shadow-soft);
     }
 
     .survey-embed iframe {
@@ -169,7 +177,7 @@
       font-family: var(--font-sans);
       font-size: 12px;
       letter-spacing: 0.06em;
-      color: var(--ink-500);
+      color: var(--blue);
     }
 
     footer .wordmark {
@@ -178,7 +186,7 @@
       font-size: 14px;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      color: var(--butter-500);
+      color: var(--blue-light);
       margin-bottom: 8px;
     }
 
@@ -193,6 +201,12 @@
 <body>
   <div class="container">
 
+    <!-- Brand -->
+    <div class="brand">
+      <span class="badge">in</span>
+      <span class="wordmark">LinkedIn AI LIVE</span>
+    </div>
+
     <!-- Headline -->
     <h1 class="display">
       Boom! You're <span class="accent">on the waitlist.</span>
@@ -202,7 +216,7 @@
     <div class="card">
       <div class="card-eyebrow">In the meantime</div>
       <h2>Want a sneak peek?</h2>
-      <p>Answer <strong>3 quick questions</strong> and we'll give you<br>free access to our Perfect Book Title Generator.</p>
+      <p>Answer <strong>3 quick questions</strong> and we'll give you<br>free access to our Finding Your LinkedIn Voice Archetype.</p>
     </div>
 
     <!-- Typeform survey -->
@@ -213,8 +227,8 @@
     </div>
 
     <footer>
-      <div class="wordmark">Self-Publishing Studio</div>
-      &copy; 2026 Self-Publishing Studio. All rights reserved.
+      <div class="wordmark">LinkedIn AI LIVE</div>
+      &copy; 2026 LinkedIn AI LIVE. All rights reserved.
     </footer>
   </div>
 
@@ -226,7 +240,7 @@
       try { return decodeURIComponent(match[1]); } catch (e) { return match[1]; }
     }
     var email = readEmail(window.location.hash) || readEmail(window.location.search) || 'xxxxx';
-    var typeformId = 'eoCgW6Rr';
+    var typeformId = 'By3W8eb7';
     var src = 'https://form.typeform.com/to/' + typeformId + '#email=' + encodeURIComponent(email);
     document.getElementById('typeform-embed').src = src;
   </script>
